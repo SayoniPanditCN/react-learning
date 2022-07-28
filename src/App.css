@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+.Navbar{
+  background-color: blueviolet;
+  text-align: right;
+  padding: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.AllRoutes{
+  width: 100%;
+}
+.ListUserEntry{
+  display: flex;
+  gap: 20px;
+}
+.ListUserEntry .Element{
+  width: 20%;
+  font-size: 14px;
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+.ListUserEntryHead{
+  display: flex;
+  gap: 20px;
+}
+.ListUserEntryHead .Element{
+  width: 20%;
+}

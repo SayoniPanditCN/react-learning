@@ -2,8 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../Assets/style.scss"
 import ReactDatePicker from "react-datepicker";
+import { Link } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router'
 
 const Registration = () => {
+
+    const navigate = useNavigate()
+    const locatinon = useLocation()
+
+    console.log("locatinon", locatinon);
 
     const [ShowPopup, setShowPopup] = useState(false)
     const [ErrMessege, setErrMessege] = useState("")
@@ -40,6 +47,7 @@ const Registration = () => {
     const [Gender, setGender] = useState("")
     const handleGender = (e) => {
         setGender(e.target.value)
+        alert(Gender)
     }
 
     const [DOB, setDOB] = useState("")
@@ -63,6 +71,23 @@ const Registration = () => {
     }
 
 
+    useEffect(() => {
+        if (locatinon.state) {
+            setFname(locatinon.state.Data.First_Name)
+            setLname(locatinon.state.Data.Last_Name)
+            setEmail(locatinon.state.Data.Email)
+            setPassword(locatinon.state.Data.Password)
+            setConfPassword(locatinon.state.Data.ConfPassword)
+            setAddress(locatinon.state.Data.Address)
+            setGender(locatinon.state.Data.Gender)
+            setDOB(locatinon.state.Data.Date_of_birth)
+            setQua(locatinon.state.Data.Highest_Qualification)
+            // setDP(locatinon.state.Data.User_Image)
+            // setCV(locatinon.state.Data.CV)
+        }
+    }, [])
+
+
     const handleFormSubmit = (e) => {
         e.preventDefault()
 
@@ -83,26 +108,33 @@ const Registration = () => {
             Email: Email,
             Password: Password,
             ConfPassword: ConfPassword,
-            Address: Address
+            Address: Address,
+            Gender: Gender,
+            Date_of_birth: DOB,
+            Highest_Qualification: Qua,
+            User_Image: DP,
+            CV: CV
+        }
+        if (locatinon.state) {
+            axios
+                .put(`http://localhost:3001/Registration/${locatinon.state.id}`, Data)
+                .then(res => {
+                    // setFname("")
+                    // setLname("")
+                    navigate("/UserList")
+                })
+        } else if (!locatinon.state) {
+            axios
+                .post("http://localhost:3001/Registration", Data)
+                .then(res => {
+                    setShowPopup(false)
+                    navigate("/Thanks")
+                })
         }
 
 
-        axios
-            .post("http://localhost:3001/Registration", Data)
-            .then(res => {
-                setShowPopup(false)
-            })
     }
 
-    const [AllUser, setAllUser] = useState([])
-
-    useEffect(() => {
-        axios
-            .get("http://localhost:3001/Registration")
-            .then(res => {
-                setAllUser(res.data)
-            })
-    }, [])
 
 
 
@@ -122,8 +154,10 @@ const Registration = () => {
 
     return (
         <div className="RegistrationBox">
-            <div className="Navbar" onClick={handleNavList}>List</div>
-            {Showlist &&
+            {/* <div className="Navbar">
+               <Link to="/UserList">List</Link> 
+            </div> */}
+            {/* {Showlist &&
                 <div className="RegList">
                     {
                         AllUser.map(data => {
@@ -135,7 +169,7 @@ const Registration = () => {
                         })
                     }
                 </div>
-            }
+            } */}
             <h2>Registration Form</h2>
             {ShowPopup && <div className="Popup">
                 <div className="Error">Error!</div>
@@ -181,7 +215,9 @@ const Registration = () => {
                         </div>
                     </div>
                     <div className="Input">
-                        <select onChange={handleGender} value={Gender}>
+                        <div> select your gender</div>
+                        <select onChange={handleGender}>
+                            <option value="Select">Select</option>
                             <option value="Female">Female</option>
                             <option value="Male" >Male</option>
                             <option value="Other" >Other</option>
@@ -197,7 +233,9 @@ const Registration = () => {
                         </div>
                     </div>
                     <div className="Input">
-                        <select onChange={handleQua} value={Qua}>
+                        <div> select your highest qualification</div>
+                        <select onChange={handleQua}>
+                            <option value="select">Select</option>
                             <option value="B.tech">B.tech</option>
                             <option value="M.tech" >M.tech</option>
                             <option value="MBA" >MBA</option>
