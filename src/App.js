@@ -9,7 +9,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AllRoutes/>
+        {/* <AllRoutes/> */}
+        <Form/>
       </header>
     </div>
   );
