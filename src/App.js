@@ -1,15 +1,13 @@
 import logo from './logo.svg';
-import './App.css';
-import Form from './Pages/Form';
+// import './App.css';
 import React from 'react';
-import Registration from './Pages/Registration';
-import AllRoutes from './AllRoutes';
+import Home from './Pages/Home';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <AllRoutes/>
+       <Home/>
       </header>
     </div>
   );
