@@ -79,6 +79,26 @@
         "Angular"
       ],
       "id": 5
+    },
+    {
+      "First_Name": "Sayoni",
+      "Last_Name": "Sayoni",
+      "Email": "Pandit@123",
+      "Password": "1234567890",
+      "ConfPassword": "1234567890",
+      "Address": "sdfghjk",
+      "Gender": "Female",
+      "Date_of_birth": "2022-08-01",
+      "Highest_Qualification": "B.tech",
+      "User_Image": "",
+      "CV": "",
+      "Country": "Albania",
+      "State": "Lezhë District",
+      "City": "Abia de las Torres",
+      "Skills": [
+        "React js"
+      ],
+      "id": 6
     }
   ]
 }
