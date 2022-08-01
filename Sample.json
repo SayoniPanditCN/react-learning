@@ -58,6 +58,27 @@
       "User_Image": "C:\\fakepath\\marina-piano-LIv3NEnZ3iI-unsplash.jpg",
       "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
       "id": 4
+    },
+    {
+      "First_Name": "Sayidxfcgvhbjn",
+      "Last_Name": "xdfcgvhbjn",
+      "Email": "dxfcgvhbj@123",
+      "Password": "123456789",
+      "ConfPassword": "123456789",
+      "Address": "xfcgvhbjn",
+      "Gender": "Female",
+      "Date_of_birth": "2022-07-29",
+      "Highest_Qualification": "B.tech",
+      "User_Image": "",
+      "CV": "",
+      "Country": "Afghanistan",
+      "State": "Ghazni",
+      "City": "Ghazni",
+      "Skills": [
+        "React js",
+        "Angular"
+      ],
+      "id": 5
     }
   ]
 }

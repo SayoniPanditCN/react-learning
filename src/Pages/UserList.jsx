@@ -140,6 +140,10 @@ const UserList = () => {
                 <div className="Element"><h4>Highest Qualification</h4></div>
                 <div className="Element"><h4>CV</h4></div>
                 <div className="Element"><h4>User Image</h4></div>
+                <div className="Element"><h4>Country</h4></div>
+                <div className="Element"><h4>State</h4></div>
+                <div className="Element"><h4>City</h4></div>
+                <div className="Element"><h4>Skills</h4></div>
                 <div className="Element"><h4></h4></div>
             </div>
             {

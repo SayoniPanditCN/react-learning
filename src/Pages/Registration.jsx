@@ -9,10 +9,6 @@ const Registration = () => {
   const AllStates = State.getAllStates();
   const AllCity = City.getAllCities();
 
-  console.log("AllCountries", AllCountries);
-  console.log("AllStates", AllStates);
-  console.log("AllCity", AllCity);
-
   const navigate = useNavigate();
   const locatinon = useLocation();
 
@@ -96,6 +92,23 @@ const Registration = () => {
     setCity(e.target.value);
   };
 
+  const [Skill, setSkill] = useState("");
+  const [SkillArr, setSkillArr] = useState([]);
+  const [Checked, setChecked] = useState(false);
+
+  const handleSkill = (e) => {
+    setChecked(!Checked);
+    setSkill(e.currentTarget.textContent)
+    let var1 = e.currentTarget.textContent;
+    console.log(var1);
+    setSkillArr((oldArray) => [...oldArray, var1]);
+    if (Checked) {
+      setSkillArr((oldArray) => oldArray.filter((item) => item !== var1));
+    }
+  };
+
+  console.log("SkillArr", SkillArr);
+
   useEffect(() => {
     if (locatinon.state) {
       setFname(locatinon.state.Data.First_Name);
@@ -107,6 +120,10 @@ const Registration = () => {
       setGender(locatinon.state.Data.Gender);
       setDOB(locatinon.state.Data.Date_of_birth);
       setQua(locatinon.state.Data.Highest_Qualification);
+      setcountry(locatinon.state.Data.Country);
+      setstate(locatinon.state.Data.State);
+      setCity(locatinon.state.Data.City);
+      setSkillArr(locatinon.state.Data.Skills);
       // setDP(locatinon.state.Data.User_Image)
       // setCV(locatinon.state.Data.CV)
     }
@@ -144,9 +161,10 @@ const Registration = () => {
       Highest_Qualification: Qua,
       User_Image: DP,
       CV: CV,
-      Country : country,
-      State : state,
-      City : city
+      Country: country,
+      State: state,
+      City: city,
+      Skills : SkillArr
     };
     if (locatinon.state) {
       axios
@@ -289,7 +307,7 @@ const Registration = () => {
           <div className="Input">
             <div> select your city</div>
             <select onChange={handleCity}>
-            <option value="">Select</option>
+              <option value="">Select</option>
               {AllCity.map((data) => {
                 if (stateCode === data.stateCode) {
                   return (
@@ -334,9 +352,37 @@ const Registration = () => {
               <option value="MSc">MSc</option>
             </select>
             <div className="Errormsg">
-              {ShowPopup === true && !Qua && <div>highest qualification required!</div>}
+              {ShowPopup === true && !Qua && (
+                <div>highest qualification required!</div>
+              )}
             </div>
           </div>
+
+          <div className="Input">
+            <div>Upload your image</div>
+            {/* <input
+              onChange={handleSkill}
+              value="ReactJs"
+              type="checkbox"
+              id="ReactJs"
+            />
+            <label for="ReactJs">React js</label>
+            <input
+              onChange={handleSkill}
+              value="Angular"
+              type="checkbox"
+              id="Angular"
+            />
+            <label for="ReactJs">Angular</label> */}
+
+            <div className="FormSkill" onClick={handleSkill}><div ></div>React js</div>
+            <div className="FormSkill" onClick={handleSkill}><div ></div>Angular</div>
+            <div className="FormSkill" onClick={handleSkill}><div ></div>Vue</div>
+
+
+
+          </div>
+
           <div className="Input">
             <div>Upload your image</div>
             <input type="file" value={DP} onChange={handleDP} />

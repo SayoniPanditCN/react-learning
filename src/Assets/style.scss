@@ -74,3 +74,15 @@
 .Popup{
  color: red;
 }
+.FormSkill .Checkbox{
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+}
+.FormSkill{
+  display: flex;
+  cursor: pointer;
+}
+.FormSkill .Checkbox.Checked{
+  background-color: #1F51FF;
+}
