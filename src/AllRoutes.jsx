@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Router, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Form from "./Pages/Form";
+import Login from "./Pages/Login";
 import Registration from "./Pages/Registration";
 import Thanks from "./Pages/Thanks";
 import UserList from "./Pages/UserList";
@@ -13,8 +14,7 @@ const AllRoutes = () => {
                 <Routes>
                 <Route path="/" element={
                         <div>
-                            <Header />
-                            <Registration />
+                            <Login/>
                         </div>
 
 
