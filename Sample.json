@@ -1,63 +1,63 @@
 {
-  "Data": [
-    {
-      "Name": "Sayoni",
-      "Email": "sayoni@123",
-      "Mobile": "65657687",
-      "id": 1
-    },
-    {
-      "Name": "sayoni",
-      "Email": "sayoi@123",
-      "Mobile": "34567890",
-      "id": 4
-    },
-    {
-      "Name": "Sayoni Pandit",
-      "Email": "sayonipandit@124",
-      "Mobile": "2134567890",
-      "id": 5
-    },
-    {
-      "Name": "Sayoni Pandit",
-      "Email": "sayonipandit@124",
-      "Mobile": "2134567890",
-      "id": 6
-    },
-    {
-      "Name": "Sayoni Pandit",
-      "Mobile": "4567889",
-      "id": 7
-    }
-  ],
-  "Registration": [
-    {
-      "First_Name": "Sayoni",
-      "Last_Name": "pandit",
-      "Email": "Pandit@123",
-      "Password": "1234567890",
-      "ConfPassword": "1234567890",
-      "Address": "kolkata",
-      "Gender": "Female",
-      "Date_of_birth": "2022-07-28",
-      "Highest_Qualification": "",
-      "User_Image": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "id": 2
-    },
-    {
-      "First_Name": "Sayoni",
-      "Last_Name": "Pandit",
-      "Email": "Panditz2123",
-      "Password": "1234567890",
-      "ConfPassword": "1234567890",
-      "Address": "asdfgh",
-      "Gender": "Female",
-      "Date_of_birth": "2022-07-28",
-      "Highest_Qualification": "B.tech",
-      "User_Image": "C:\\fakepath\\marina-piano-LIv3NEnZ3iI-unsplash.jpg",
-      "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "id": 4
-    }
-  ]
-}
+    "Data": [
+      {
+        "Name": "Sayoni",
+        "Email": "sayoni@123",
+        "Mobile": "65657687",
+        "id": 1
+      },
+      {
+        "Name": "sayoni",
+        "Email": "sayoi@123",
+        "Mobile": "34567890",
+        "id": 4
+      },
+      {
+        "Name": "Sayoni Pandit",
+        "Email": "sayonipandit@124",
+        "Mobile": "2134567890",
+        "id": 5
+      },
+      {
+        "Name": "Sayoni Pandit",
+        "Email": "sayonipandit@124",
+        "Mobile": "2134567890",
+        "id": 6
+      },
+      {
+        "Name": "Sayoni Pandit",
+        "Mobile": "4567889",
+        "id": 7
+      }
+    ],
+    "Registration": [
+      {
+        "First_Name": "Sayoni",
+        "Last_Name": "pandit",
+        "Email": "Pandit@123",
+        "Password": "1234567890",
+        "ConfPassword": "1234567890",
+        "Address": "kolkata",
+        "Gender": "Female",
+        "Date_of_birth": "2022-07-28",
+        "Highest_Qualification": "",
+        "User_Image": "C:\\fakepath\\BTech_Final_Result.pdf",
+        "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
+        "id": 2
+      },
+      {
+        "First_Name": "Sayoni",
+        "Last_Name": "Pandit",
+        "Email": "Panditz2123",
+        "Password": "1234567890",
+        "ConfPassword": "1234567890",
+        "Address": "asdfgh",
+        "Gender": "Female",
+        "Date_of_birth": "2022-07-28",
+        "Highest_Qualification": "B.tech",
+        "User_Image": "C:\\fakepath\\marina-piano-LIv3NEnZ3iI-unsplash.jpg",
+        "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
+        "id": 4
+      }
+    ]
+  }
