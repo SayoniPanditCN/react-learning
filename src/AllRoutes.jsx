@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Router, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./Header";
-import Form from "./Pages/Form";
-import Registration from "./Pages/Registration";
-import Thanks from "./Pages/Thanks";
-import UserList from "./Pages/UserList";
+import MoviePage from "./Pages/MoviePage";
+// import Form from "./Pages/Form";
+// import Registration from "./Pages/Registration";
+// import Thanks from "./Pages/Thanks";
+// import UserList from "./Pages/UserList";
 
 const AllRoutes = () => {
     return (
@@ -12,14 +13,9 @@ const AllRoutes = () => {
             <BrowserRouter>
                 <Routes>
                 <Route path="/" element={
-                        <div>
-                            <Header />
-                            <Registration />
-                        </div>
-
-
+                    <MoviePage/>
                     } />
-                    <Route path="/Form" element={
+                    {/* <Route path="/Form" element={
                         <div>
                             <Header />
                             <Form />
@@ -44,7 +40,7 @@ const AllRoutes = () => {
                             <Header />
                             <Thanks/>
                         </div>
-                    } />
+                    } /> */}
                 </Routes>
             </BrowserRouter>
         </div>
