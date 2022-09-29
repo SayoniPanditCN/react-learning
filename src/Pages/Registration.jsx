@@ -10,7 +10,7 @@ const Registration = () => {
   const AllCity = City.getAllCities();
 
   const navigate = useNavigate();
-  const locatinon = useLocation();
+  const location = useLocation();
 
   const [ShowPopup, setShowPopup] = useState(false);
   const [ErrMessege, setErrMessege] = useState("");
@@ -47,7 +47,6 @@ const Registration = () => {
   const [Gender, setGender] = useState("");
   const handleGender = (e) => {
     setGender(e.target.value);
-    alert(Gender);
   };
 
   const [DOB, setDOB] = useState("");
@@ -96,36 +95,50 @@ const Registration = () => {
   const [SkillArr, setSkillArr] = useState([]);
   const [Checked, setChecked] = useState(false);
 
+  // const handleSkill = (e) => {
+  //   setChecked(!Checked);
+  //   setSkill(e.currentTarget.textContent)
+  //   let var1 = e.currentTarget.textContent;
+  //   console.log(var1);
+  //   setSkillArr((oldArray) => [...oldArray, var1]);
+  //   if (Checked) {
+  //     setSkillArr((oldArray) => oldArray.filter((item) => item !== var1));
+  //   }
+  // };
+
   const handleSkill = (e) => {
-    setChecked(!Checked);
-    setSkill(e.currentTarget.textContent)
-    let var1 = e.currentTarget.textContent;
-    console.log(var1);
-    setSkillArr((oldArray) => [...oldArray, var1]);
-    if (Checked) {
-      setSkillArr((oldArray) => oldArray.filter((item) => item !== var1));
+    // let Arr = SkillArr
+    // Arr.push(e.target.value)
+    // setSkillArr(Arr)
+    // console.log(e.target);
+
+    const { value, checked } = e.target;
+    console.log(value, checked);
+
+    if (checked) {
+      setSkillArr([...SkillArr, value]);
+    } else {
+      setSkillArr(SkillArr.filter((x) => x !== value));
     }
   };
 
-  console.log("SkillArr", SkillArr);
-
   useEffect(() => {
-    if (locatinon.state) {
-      setFname(locatinon.state.Data.First_Name);
-      setLname(locatinon.state.Data.Last_Name);
-      setEmail(locatinon.state.Data.Email);
-      setPassword(locatinon.state.Data.Password);
-      setConfPassword(locatinon.state.Data.ConfPassword);
-      setAddress(locatinon.state.Data.Address);
-      setGender(locatinon.state.Data.Gender);
-      setDOB(locatinon.state.Data.Date_of_birth);
-      setQua(locatinon.state.Data.Highest_Qualification);
-      setcountry(locatinon.state.Data.Country);
-      setstate(locatinon.state.Data.State);
-      setCity(locatinon.state.Data.City);
-      setSkillArr(locatinon.state.Data.Skills);
-      // setDP(locatinon.state.Data.User_Image)
-      // setCV(locatinon.state.Data.CV)
+    if (location.state) {
+      setFname(location.state.Data.First_Name);
+      setLname(location.state.Data.Last_Name);
+      setEmail(location.state.Data.Email);
+      setPassword(location.state.Data.Password);
+      setConfPassword(location.state.Data.ConfPassword);
+      setAddress(location.state.Data.Address);
+      setGender(location.state.Data.Gender);
+      setDOB(location.state.Data.Date_of_birth);
+      setQua(location.state.Data.Highest_Qualification);
+      setcountry(location.state.Data.Country);
+      setstate(location.state.Data.State);
+      setCity(location.state.Data.City);
+      setSkillArr(location.state.Data.Skills);
+      // setDP(location.state.Data.User_Image)
+      // setCV(location.state.Data.CV)
     }
   }, []);
 
@@ -164,18 +177,18 @@ const Registration = () => {
       Country: country,
       State: state,
       City: city,
-      Skills : SkillArr
+      Skills: SkillArr,
     };
-    if (locatinon.state) {
+    if (location.state) {
       axios
-        .put(`http://localhost:3001/Registration/${locatinon.state.id}`, Data)
+        .put(`http://localhost:5000/Registration/${location.state.id}`, Data)
         .then((res) => {
           // setFname("")
           // setLname("")
           navigate("/UserList");
         });
-    } else if (!locatinon.state) {
-      axios.post("http://localhost:3001/Registration", Data).then((res) => {
+    } else if (!location.state) {
+      axios.post("http://localhost:5000/Registration", Data).then((res) => {
         setShowPopup(false);
         navigate("/Thanks");
       });
@@ -359,33 +372,45 @@ const Registration = () => {
           </div>
 
           <div className="Input">
-            <div>Upload your image</div>
-            {/* <input
-              onChange={handleSkill}
-              value="ReactJs"
-              type="checkbox"
-              id="ReactJs"
-            />
-            <label for="ReactJs">React js</label>
-            <input
-              onChange={handleSkill}
-              value="Angular"
-              type="checkbox"
-              id="Angular"
-            />
-            <label for="ReactJs">Angular</label> */}
+            <div>Your skills</div>
 
-            <div className="FormSkill" onClick={handleSkill}><div ></div>React js</div>
-            <div className="FormSkill" onClick={handleSkill}><div ></div>Angular</div>
-            <div className="FormSkill" onClick={handleSkill}><div ></div>Vue</div>
+            <span>
+              <label htmlFor="ReactJs">React js</label>
+              <input
+                onChange={handleSkill}
+                value="ReactJs"
+                type="checkbox"
+                id="ReactJs"
+              />
+            </span>
 
+            <span>
+              <label htmlFor="Angular">Angular</label>
+              <input
+                onChange={handleSkill}
+                value="Angular"
+                type="checkbox"
+                id="Angular"
+              />
+            </span>
 
-
+            <span>
+              <label htmlFor="Vue">Vue</label>
+              <input
+                onChange={handleSkill}
+                value="Vue"
+                type="checkbox"
+                id="Vue"
+              />
+            </span>
+            <div className="Errormsg">
+              {ShowPopup === true && !SkillArr && <div>Skills required!</div>}
+            </div>
           </div>
 
           <div className="Input">
             <div>Upload your image</div>
-            <input type="file" value={DP} onChange={handleDP} />
+            <input type="file" value={DP} accept=".png, .jpg, .jpeg" onChange={handleDP} />
             <div className="Errormsg">
               {ShowPopup === true && !DP && <div>DP required!</div>}
             </div>

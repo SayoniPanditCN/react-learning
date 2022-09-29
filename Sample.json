@@ -32,73 +32,25 @@
   ],
   "Registration": [
     {
-      "First_Name": "Sayoni",
-      "Last_Name": "pandit",
-      "Email": "Pandit@123",
-      "Password": "1234567890",
-      "ConfPassword": "1234567890",
-      "Address": "kolkata",
+      "First_Name": "wsdfgt",
+      "Last_Name": "sdfgh",
+      "Email": "sayoni@123",
+      "Password": "12345678",
+      "ConfPassword": "12345678",
+      "Address": "dfghjkl;",
       "Gender": "Female",
-      "Date_of_birth": "2022-07-28",
-      "Highest_Qualification": "",
-      "User_Image": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "id": 2
-    },
-    {
-      "First_Name": "Sayoni",
-      "Last_Name": "Pandit",
-      "Email": "Panditz2123",
-      "Password": "1234567890",
-      "ConfPassword": "1234567890",
-      "Address": "asdfgh",
-      "Gender": "Female",
-      "Date_of_birth": "2022-07-28",
+      "Date_of_birth": "2022-09-30",
       "Highest_Qualification": "B.tech",
-      "User_Image": "C:\\fakepath\\marina-piano-LIv3NEnZ3iI-unsplash.jpg",
-      "CV": "C:\\fakepath\\BTech_Final_Result.pdf",
-      "id": 4
-    },
-    {
-      "First_Name": "Sayidxfcgvhbjn",
-      "Last_Name": "xdfcgvhbjn",
-      "Email": "dxfcgvhbj@123",
-      "Password": "123456789",
-      "ConfPassword": "123456789",
-      "Address": "xfcgvhbjn",
-      "Gender": "Female",
-      "Date_of_birth": "2022-07-29",
-      "Highest_Qualification": "B.tech",
-      "User_Image": "",
-      "CV": "",
-      "Country": "Afghanistan",
-      "State": "Ghazni",
-      "City": "Ghazni",
+      "User_Image": "C:\\fakepath\\Sayoni Pandit-React JS.pdf",
+      "CV": "C:\\fakepath\\Pradipti Ghosh cv.pdf",
+      "Country": "India",
+      "State": "West Bengal",
+      "City": "Andal",
       "Skills": [
-        "React js",
-        "Angular"
+        "ReactJs",
+        "Vue"
       ],
-      "id": 5
-    },
-    {
-      "First_Name": "Sayoni",
-      "Last_Name": "Sayoni",
-      "Email": "Pandit@123",
-      "Password": "1234567890",
-      "ConfPassword": "1234567890",
-      "Address": "sdfghjk",
-      "Gender": "Female",
-      "Date_of_birth": "2022-08-01",
-      "Highest_Qualification": "B.tech",
-      "User_Image": "",
-      "CV": "",
-      "Country": "Albania",
-      "State": "Lezhë District",
-      "City": "Abia de las Torres",
-      "Skills": [
-        "React js"
-      ],
-      "id": 6
+      "id": 1
     }
   ]
 }

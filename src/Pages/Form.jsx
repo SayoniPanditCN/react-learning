@@ -29,14 +29,14 @@ const Form = () => {
       Mobile: Mobile,
     };
 
-    axios.post("http://localhost:3001/Data/", AllData)
+    axios.post("http://localhost:5000/Data/", AllData)
     .then((res) => {
       window.location.reload()
     })
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3001/Data/").then((res) => {
+    axios.get("http://localhost:5000/Data/").then((res) => {
       setData(res.data);
     });
   }, []);

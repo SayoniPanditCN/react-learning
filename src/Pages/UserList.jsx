@@ -17,7 +17,7 @@ const UserList = () => {
 
     const getUserData = () => {
         axios
-            .get("http://localhost:3001/Registration")
+            .get("http://localhost:5000/Registration")
             .then(res => {
                 setAllUser(res.data)
             })
@@ -49,7 +49,7 @@ const UserList = () => {
         }
 
         axios
-        .delete(`http://localhost:3001/Registration/${id}`,Data)
+        .delete(`http://localhost:5000/Registration/${id}`,Data)
         .then(res => {
             getUserData();
         })
@@ -118,7 +118,7 @@ const UserList = () => {
         // }
 
         // axios
-        //     .put(`http://localhost:3001/Registration/${EntryId}`, Data)
+        //     .put(`http://localhost:5000/Registration/${EntryId}`, Data)
         //     .then( res =>{
         //         console.log(res);
         //         getUserData();
@@ -132,19 +132,19 @@ const UserList = () => {
     return (
         <div>
             <div className="ListUserEntryHead">
-                <div className="Element"><h4>Name</h4></div>
-                <div className="Element"><h4>Email</h4></div>
-                <div className="Element"><h4>Address</h4></div>
-                <div className="Element"><h4>Gender</h4></div>
-                <div className="Element"><h4>DOB</h4></div>
-                <div className="Element"><h4>Highest Qualification</h4></div>
-                <div className="Element"><h4>CV</h4></div>
-                <div className="Element"><h4>User Image</h4></div>
-                <div className="Element"><h4>Country</h4></div>
-                <div className="Element"><h4>State</h4></div>
-                <div className="Element"><h4>City</h4></div>
-                <div className="Element"><h4>Skills</h4></div>
-                <div className="Element"><h4></h4></div>
+                <div className="Element"><h6>Name</h6></div>
+                <div className="Element"><h6>Email</h6></div>
+                <div className="Element"><h6>Address</h6></div>
+                <div className="Element"><h6>Gender</h6></div>
+                <div className="Element"><h6>DOB</h6></div>
+                <div className="Element"><h6>Highest Qualification</h6></div>
+                <div className="Element"><h6>CV</h6></div>
+                <div className="Element"><h6>User Image</h6></div>
+                <div className="Element"><h6>Country</h6></div>
+                <div className="Element"><h6>State</h6></div>
+                <div className="Element"><h6>City</h6></div>
+                <div className="Element"><h6>Skills</h6></div>
+                <div className="Element"><h6></h6></div>
             </div>
             {
                 AllUser.map(info => {

@@ -18,7 +18,7 @@ const ListUserEntry = ({ data,handleEdit, handleDelete}) => {
                 <div className='Element'>{data.Country}</div>
                 <div className='Element'>{data.State}</div>
                 <div className='Element'>{data.City}</div>
-                <div className='Element'>{data.Skills}</div>
+                <div className='Element'>{(data.Skills).join(", ")}</div>
                 <div className='Element'>
                     <button onClick={() => handleEdit(data)}>Edit</button>
                     <button onClick={() => handleDelete(data.id)}>Delete</button>
